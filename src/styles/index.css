@@ -115,32 +115,6 @@ hr {
 
 
 
-/* Scroll progress indicator CSS */
-#circular-progress {
-  height: 70px;
-  width: 70px;
-  border-radius: 50%;
-  position: fixed;
-  bottom: 20px;
-  right: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,.2);
-  display: grid;
-  place-items: center;
-}
-
-.progress-value {
-  display: block;
-  height: calc(100% - 15px);
-  width: calc(100% - 15px);
-  background-color: #fff;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-weight: 500;
-}
-
-
-
 /* Extra small devices */
 @media (max-width: 600px) {
   #main{

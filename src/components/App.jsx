@@ -93,9 +93,6 @@ function App() {
       </div>
       <hr />
       {selectedCategory === "All" ? all() : newCategory()}
-      <div id='circular-progress'>
-        <span className='progress-value'></span>
-      </div>
     </div>
   )
 }
