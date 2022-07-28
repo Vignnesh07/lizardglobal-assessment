@@ -1,13 +1,237 @@
 body {
-  margin: 0;
+  margin: 0px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+hr {
+  color: #fff;
+}
+
+
+/* Main div CSS - background */
+#main {
+  min-width: 100vh;
+  min-height: 100vh;
+  position: static;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) 0% 0% / 400% 400%;
+	background-size: 300% 300%;
+	animation: 10s ease infinite gradient;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+/* Title CSS */
+.title{
+  color: #fff;
+  font-weight: 300;
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+
+/* Categories CSS */
+#categoryList{
+  left: 0;
+  right: 0;
+  display: flex;
+  direction: ltr;
+  overflow-x: scroll; 
+  position: relative;
+  margin-bottom: 10px;
+}
+
+#categoryList::-webkit-scrollbar {
+  display: none;
+}
+
+.notSelected{
+  cursor: pointer;
+  color: #fff;
+  font-size: small;
+  text-align: center;
+  font-weight: bolder;
+  padding: 0px 2px 0px 2px;
+  transition: background-color .5s, color .5s;
+}
+
+.selected{
+  margin: 5px;
+  cursor: pointer;
+  color: #000000;
+  font-size: small;
+  text-align: center;
+  font-weight: bolder;
+  padding: 0px 2px 0px 2px;
+  transition: background-color .5s, color 1s;
+}
+
+
+
+/* Grid CSS */
+.grid {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
+
+
+/* Show more button CSS */
+.show-more {
+  width: 100vh;
+  padding: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.1em;
+  text-align: center;
+  border-radius: 20px;
+  font-weight: bolder;
+  margin: 60px auto 0px auto;
+  background-color: transparent;
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,.2);
+}
+
+
+
+/* Scroll progress indicator CSS */
+#circular-progress {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
+  display: grid;
+  place-items: center;
+}
+
+.progress-value {
+  display: block;
+  height: calc(100% - 15px);
+  width: calc(100% - 15px);
+  background-color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 500;
+}
+
+
+
+/* Extra small devices */
+@media (max-width: 600px) {
+  #main{
+    padding: 10% 5% 10% 5%;
+    background-size: 300% 300%;
+  }
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .notSelected {
+    padding: 0px 10px 0px 10px;
+  }
+  .selected {
+    padding: 0px 10px 0px 10px;
+  }
+  .show-more {
+    width: 50vh;
+  }
+} 
+
+/* Small devices */
+@media (min-width: 600px) {
+  #main{
+    padding: 10% 5% 10% 5%;
+    background-size: 300% 300%;
+  }
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .notSelected {
+    padding: 0px 10px 0px 10px;
+  }
+  .selected {
+    padding: 0px 10px 0px 10px;
+  }
+  .show-more {
+    width: 50vh;
+  }
+} 
+
+/* Medium devices */
+@media (min-width: 700px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .notSelected {
+    padding: 0px 10px 0px 10px;
+  }
+  .selected {
+    padding: 0px 10px 0px 10px;
+  }
+  .show-more {
+    width: 70vh;
+  }
+} 
+
+/* Large devices */
+@media (min-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .notSelected {
+    padding: 0px 10px 0px 10px;
+  }
+  .selected {
+    padding: 0px 10px 0px 10px;
+  }
+  .show-more {
+    width: 70vh;
+  }
+} 
+
+/* Extra large devices */
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #categoryList {
+    justify-content: center;
+  }
+  .show-more {
+    width: 100vh;
+  }
+}
+
+/* Extra extra large devices */
+@media (min-width: 2000px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  #categoryList {
+    justify-content: center;
+  }
 }
